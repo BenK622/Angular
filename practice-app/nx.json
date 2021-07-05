@@ -1,0 +1,50 @@
+{
+  "npmScope": "practice-app",
+  "affected": {
+    "defaultBase": "master"
+  },
+  "implicitDependencies": {
+    "package.json": {
+      "dependencies": "*",
+      "devDependencies": "*"
+    },
+    ".eslintrc.json": "*"
+  },
+  "tasksRunnerOptions": {
+    "default": {
+      "runner": "@nrwl/nx-cloud",
+      "options": {
+        "cacheableOperations": ["build", "lint", "test", "e2e"],
+        "accessToken": "OTAzOWQ2YjgtN2VjOS00NjY5LWFkNmMtMWExM2ZlMjkwNGI5fHJlYWQtd3JpdGU=",
+        "canTrackAnalytics": false,
+        "showUsageWarnings": true
+      }
+    }
+  },
+  "targetDependencies": {
+    "build": [
+      {
+        "target": "build",
+        "projects": "dependencies"
+      }
+    ]
+  },
+  "projects": {
+    "api": {
+      "tags": []
+    },
+    "data": {
+      "tags": []
+    },
+    "practice-app": {
+      "tags": []
+    },
+    "practice-app-e2e": {
+      "tags": [],
+      "implicitDependencies": ["practice-app"]
+    },
+    "ui": {
+      "tags": []
+    }
+  }
+}
